@@ -1,0 +1,12 @@
+-
+    name: "Thi is my variable playbook"
+    hosts: developer
+    vars:
+        servicename: httpd
+
+    tasks:
+        -
+            name: "RUNNING THE HTTPD SERVICE"
+            service:
+                name: '{{ servicename }}'
+                state: started

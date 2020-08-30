@@ -1,0 +1,13 @@
+-
+    name: "Loops"
+    hosts: developer
+    become: yes
+    vars:
+        packages: [ binutils, libaio, make, sysstat, nodejs, unixODBC ]
+    tasks:
+        -
+            name: "Installing packacges via Loops"
+            yum:
+                name: '{{ item }}'
+                state: absent
+            loop: '{{ packages }}'

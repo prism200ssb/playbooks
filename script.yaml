@@ -1,0 +1,7 @@
+-
+    hosts: all
+    name: "Running Scripts in target machine"
+    tasks:
+        -
+            name: "Testing Scripts"
+            script: script.sh

@@ -1,0 +1,17 @@
+-
+    name: "Installing Multiple Packages in target machine"
+    hosts: developer
+    tasks:
+        -
+            name: "installing packages like wget, ruby, tree"
+            yum:
+                name:
+                    -   wget
+                    -   ruby
+                    -   tree
+                state: absent
+                update_cache: true
+            become: true
+
+
+        

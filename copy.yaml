@@ -1,0 +1,9 @@
+-
+    name: "Copying Projects in Target machine"
+    hosts: developer
+    tasks:
+        -
+            name: "Copy file"
+            copy:
+                src: copytest1.txt
+                dest: /tmp/

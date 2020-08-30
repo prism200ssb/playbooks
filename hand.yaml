@@ -1,0 +1,22 @@
+---
+    -
+        name: "Roles"
+        hosts: developer
+        become: true
+        tasks:
+            # - 
+            #     name: Update package dependencies
+            #     yum: update_cache=yes
+        
+            - 
+                name: install httpd
+                yum: name=httpd state=latest
+                notify: restart services
+
+        handlers:
+            -
+                name: restart services
+                service: name=httpd state=restarted
+
+      
+    

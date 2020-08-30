@@ -1,0 +1,21 @@
+-
+    name: "Ansible Condition for different environment like Redhat, Debian, etc"
+    hosts: all
+    tasks:
+        -
+            name: "Install wget on Centos machines"
+            yum:
+                name: tree
+                state: present
+                update_cache: true
+            become: true
+            when: ansible_os_family == "RedHat"
+        
+        -
+            name: "Install tree on Ubuntu Machines"
+            apt:
+                name: tree
+                state: present
+                update_cache: true
+            become: true
+            when: ansible_os_family == "Debian"

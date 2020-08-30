@@ -1,0 +1,12 @@
+-
+    name: "This is our Second Playbook"
+    hosts: all
+    become: yes
+    tasks:
+        -
+            name: "Installing Package in target Machines"
+            yum:
+                name: tree
+                state: absent
+
+

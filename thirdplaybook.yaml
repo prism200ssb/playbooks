@@ -1,0 +1,15 @@
+-
+    name: "This is Third Playbook"
+    hosts: developer
+    become: yes
+    tasks:
+        -   
+            name: "Installing Webserver for developers"
+            yum:
+                name: httpd
+                state: latest
+        -
+            name: "Starting the services of HTTPD"
+            service:
+                name: httpd
+                state: started
